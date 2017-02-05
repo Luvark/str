@@ -7,8 +7,8 @@ import org.junit.Test;
 
 import com.amazonaws.services.lambda.runtime.Context;
 
-import slack.base.LambdaFunctionHandler;
-import slack.base.SlackInputDto;
+import my.slack.base.LambdaFunctionHandler;
+import my.slack.base.SlackInputDto;
 
 /**
  * A simple test harness for locally invoking your Lambda function handler.
