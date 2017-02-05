@@ -39,8 +39,8 @@ import net.rithms.test.sync.AllSyncTests;
 @SuiteClasses({ UtilTest.class, AllSyncTests.class, AllAsyncTests.class })
 public class RiotApiTest {
 
-	private static final String apiKey ="RGAPI-ec7e57ce-931b-4224-a569-f30d3550a38f";
-	private static final String tournamentApiKey = "RGAPI-ec7e57ce-931b-4224-a569-f30d3550a38f";
+	private static final String apiKey ="Your api key";
+	private static final String tournamentApiKey = "Your api key";
 
 	/**
 	 * This method provides an {@link RiotApi} object with the {@code apiKey} specified in this class to other tests.

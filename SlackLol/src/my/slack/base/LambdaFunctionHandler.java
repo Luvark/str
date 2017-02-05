@@ -14,7 +14,7 @@ import com.amazonaws.services.lambda.runtime.RequestHandler;
 
 public class LambdaFunctionHandler implements RequestHandler<SlackInputDto, Object> {
 	// RIOT API KEY
-	final String apiKey = "RGAPI-ec7e57ce-931b-4224-a569-f30d3550a38f";
+	final String apiKey = "YourApikey";
 	// logger
 	LambdaLogger logger;
 
