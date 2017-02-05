@@ -1,0 +1,5 @@
+#Lambda Function Project Metadata
+#Sun Feb 05 01:25:53 JST 2017
+lastDeploymentFunctionName=LolSlack
+lastDeploymentBucketName=lambda-function-bucket-ap-northeast-1-1483030173414
+lastDeploymentEndpoint=https\://lambda.ap-northeast-1.amazonaws.com/
