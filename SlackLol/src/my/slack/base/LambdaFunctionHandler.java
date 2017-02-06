@@ -13,10 +13,10 @@ import com.amazonaws.services.lambda.runtime.LambdaLogger;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 
 public class LambdaFunctionHandler implements RequestHandler<SlackInputDto, Object> {
-	// RIOT API KEY
-	final String apiKey = "YourApikey";
 	// logger
 	LambdaLogger logger;
+	// codec
+	final URLCodec codec = new URLCodec("UTF-8");
 
 	@Override
 	public Object handleRequest(SlackInputDto input, Context context) {
@@ -25,7 +25,7 @@ public class LambdaFunctionHandler implements RequestHandler<SlackInputDto, Obje
 		OutputDto dto = new OutputDto();
 		// 認証
 		try {
-			final URLCodec codec = new URLCodec("UTF-8");
+
 			final String command = codec.decode(input.getCommand());
 			final String inputText = input.getText();
 			String returnText = "";
@@ -59,12 +59,13 @@ public class LambdaFunctionHandler implements RequestHandler<SlackInputDto, Obje
 	 * @throws Exception
 	 */
 	private String getSummonerInfo(String summonerName) throws Exception {
-		String riotApiUrl = "https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/";
+		String riotApiUrl = "https://jp.api.pvp.net/api/lol/jp/v1.4/summoner/by-name/";
 		String userName = summonerName;
-		String stringUrl = riotApiUrl + userName + "?api_key=" + apiKey;
+		String stringUrl = riotApiUrl + userName + "?api_key=" + APIKey.RIOT_API_KEY;
 
 		logger.log("userName=" + userName);
 		logger.log("stringUrl=" + stringUrl);
+		logger.log("decodedUserName="+codec.decode(userName));
 
 		URL url = new URL(stringUrl);
 		BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
