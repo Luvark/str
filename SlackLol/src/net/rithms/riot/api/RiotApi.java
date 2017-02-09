@@ -128,7 +128,7 @@ import net.rithms.util.Convert;
  * Summoner summoner = api.getSummonerByName(Region.NA, "Tryndamere"); // Gets a Summoner object for the summoner Tryndamere on NA
  * </pre>
  * </p>
- * 
+ *
  * <p>
  * To fire asynchronous api calls, you need an instance of {@link RiotApiAsync}, which you can get by calling {@link RiotApi#getAsyncApi()}.
  * </p>
@@ -159,10 +159,10 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Constructs a RiotApi object with the given configuration.
-	 * 
+	 *
 	 * @param config
 	 *            Configuration to use for this RiotApi object
-	 * @see ApiConfig
+	 * @see ApiConfig<BR>
 	 */
 	public RiotApi(ApiConfig config) {
 		this.config = config;
@@ -361,7 +361,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Provides a RiotApiAsync object to use for asynchronous api calls.
-	 * 
+	 *
 	 * @return RotApiAsync object
 	 * @see RiotApiAsync
 	 */
@@ -378,7 +378,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Get challenger tier league for the given {@code queueType}.
-	 * 
+	 *
 	 * @param region
 	 *            The region of the leagues.
 	 * @param queueType
@@ -517,7 +517,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Get the configuration
-	 * 
+	 *
 	 * @return {@link ApiConfig} object
 	 * @see ApiConfig
 	 */
@@ -527,7 +527,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Get current game information for the given summoner ID.
-	 * 
+	 *
 	 * @param platformId
 	 *            The platform ID for which to fetch data.
 	 * @param summonerId
@@ -548,7 +548,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Retrieves a champion by its {@code id}.
-	 * 
+	 *
 	 * @param region
 	 *            Region from which to retrieve data.
 	 * @param id
@@ -578,7 +578,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Retrieves a champion by its {@code id}.
-	 * 
+	 *
 	 * @param region
 	 *            Region from which to retrieve data.
 	 * @param id
@@ -597,7 +597,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Retrieves champion list.
-	 * 
+	 *
 	 * @param region
 	 *            Region from which to retrieve data.
 	 * @param locale
@@ -628,7 +628,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Retrieves champion list.
-	 * 
+	 *
 	 * @param region
 	 *            Region from which to retrieve data.
 	 * @return A list with champions
@@ -643,7 +643,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Retrieves item by its unique {@code id}.
-	 * 
+	 *
 	 * @param region
 	 *            Region from which to retrieve data.
 	 * @param id
@@ -673,7 +673,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Retrieves item by its unique {@code id}.
-	 * 
+	 *
 	 * @param region
 	 *            Region from which to retrieve data.
 	 * @param id
@@ -692,7 +692,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Retrieves item list.
-	 * 
+	 *
 	 * @param region
 	 *            Region from which to retrieve data.
 	 * @param locale
@@ -720,7 +720,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Retrieves item list.
-	 * 
+	 *
 	 * @param region
 	 *            Region from which to retrieve data.
 	 * @return A list of items
@@ -737,7 +737,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Retrieve supported languages data.
-	 * 
+	 *
 	 * @param region
 	 *            Region from which to retrieve data.
 	 * @return A list with languages
@@ -754,7 +754,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Retrieve language strings data.
-	 * 
+	 *
 	 * @param region
 	 *            Region from which to retrieve data.
 	 * @param locale
@@ -778,7 +778,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Retrieve language strings data.
-	 * 
+	 *
 	 * @param region
 	 *            Region from which to retrieve data.
 	 * @return Language strings
@@ -795,7 +795,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Retrieves map data.
-	 * 
+	 *
 	 * @param region
 	 *            Region from which to retrieve data.
 	 * @param locale
@@ -819,7 +819,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Retrieves map data.
-	 * 
+	 *
 	 * @param region
 	 *            Region from which to retrieve data.
 	 * @return A list of game maps
@@ -836,7 +836,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Retrieves mastery item by its unique {@code id}.
-	 * 
+	 *
 	 * @param region
 	 *            Region from which to retrieve data.
 	 * @param id
@@ -865,7 +865,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Retrieves mastery item by its unique {@code id}.
-	 * 
+	 *
 	 * @param region
 	 *            Region from which to retrieve data.
 	 * @param id
@@ -884,7 +884,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Retrieves mastery list.
-	 * 
+	 *
 	 * @param region
 	 *            Region from which to retrieve data.
 	 * @param locale
@@ -912,7 +912,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Retrieves mastery list.
-	 * 
+	 *
 	 * @param region
 	 *            Region from which to retrieve data.
 	 * @return A list with masteries
@@ -929,7 +929,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Retrieve realm data.
-	 * 
+	 *
 	 * @param region
 	 *            Region corresponding to data to retrieve.
 	 * @return A single realm
@@ -947,7 +947,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Retrieves rune by its unique {@code id}.
-	 * 
+	 *
 	 * @param region
 	 *            Region from which to retrieve data.
 	 * @param id
@@ -976,7 +976,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Retrieves rune by its unique {@code id}.
-	 * 
+	 *
 	 * @param region
 	 *            Region from which to retrieve data.
 	 * @param id
@@ -995,7 +995,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Retrieves rune list.
-	 * 
+	 *
 	 * @param region
 	 *            Region from which to retrieve data.
 	 * @param locale
@@ -1023,7 +1023,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Retrieves rune list.
-	 * 
+	 *
 	 * @param region
 	 *            Region from which to retrieve data.
 	 * @return A list with runes
@@ -1040,7 +1040,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Retrieves summoner spell by its unique {@code id}.
-	 * 
+	 *
 	 * @param region
 	 *            Region from which to retrieve data.
 	 * @param id
@@ -1069,7 +1069,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Retrieves summoner spell by its unique {@code id}.
-	 * 
+	 *
 	 * @param region
 	 *            Region from which to retrieve data.
 	 * @param id
@@ -1088,7 +1088,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Retrieves summoner spell list.
-	 * 
+	 *
 	 * @param region
 	 *            Region from which to retrieve data.
 	 * @param locale
@@ -1120,7 +1120,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Retrieves summoner spell list.
-	 * 
+	 *
 	 * @param region
 	 *            Region from which to retrieve data.
 	 * @return A list with summoner spells
@@ -1137,7 +1137,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Retrieve version data.
-	 * 
+	 *
 	 * @param region
 	 *            Region from which to retrieve data.
 	 * @return A list with versions
@@ -1152,7 +1152,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Get list of featured games.
-	 * 
+	 *
 	 * @param region
 	 *            Region from which to retrieve data.
 	 * @return Featured games
@@ -1187,7 +1187,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Get a list of leagues for a given {@code summonerId}
-	 * 
+	 *
 	 * @param region
 	 *            The region of the leagues.
 	 * @param summonerId
@@ -1211,7 +1211,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Get a list of leagues for a given {@code summonerId}
-	 * 
+	 *
 	 * @param region
 	 *            The region of the leagues.
 	 * @param summonerId
@@ -1230,7 +1230,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Get a list of leagues mapped by summoner ID for a given list of {@code summonerIds}.
-	 * 
+	 *
 	 * @param region
 	 *            The region of the leagues.
 	 * @param summonerIds
@@ -1251,7 +1251,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Get a list of leagues mapped by summoner ID for a given list of {@code summonerIds}.
-	 * 
+	 *
 	 * @param region
 	 *            The region of the leagues.
 	 * @param summonerIds
@@ -1271,7 +1271,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Get a list of league entries for a given {@code summonerId}.
-	 * 
+	 *
 	 * @param region
 	 *            The region of the leagues.
 	 * @param summonerId
@@ -1295,7 +1295,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Get a list of league entries for a given {@code summonerId}.
-	 * 
+	 *
 	 * @param region
 	 *            The region of the leagues.
 	 * @param summonerId
@@ -1314,7 +1314,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Get a list of league entries mapped by summoner ID for a given list of {@code summonerIds}.
-	 * 
+	 *
 	 * @param region
 	 *            The region of the leagues.
 	 * @param summonerIds
@@ -1335,7 +1335,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Get a list of league entries mapped by summoner ID for a given list of {@code summonerIds}.
-	 * 
+	 *
 	 * @param region
 	 *            The region of the leagues.
 	 * @param summonerIds
@@ -1355,7 +1355,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Gets a list of lobby events by {@code tournamentCode}
-	 * 
+	 *
 	 * @param tournamentCode
 	 *            Tournament code used to enter the lobby.
 	 * @return Lobby event data
@@ -1373,7 +1373,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Get master tier league for the given {@code queueType}.
-	 * 
+	 *
 	 * @param region
 	 *            The region of the leagues.
 	 * @param queueType
@@ -1816,7 +1816,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Get shard list.
-	 * 
+	 *
 	 * @return Status for a list of shards
 	 * @throws RiotApiException
 	 *             If the API returns an error or unparsable result
@@ -1829,7 +1829,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Get shard status. Returns the data available on the status.leagueoflegends.com website for the given region.
-	 * 
+	 *
 	 * @param region
 	 *            The region for which to fetch data.
 	 * @return Status for a single shard
@@ -2100,7 +2100,7 @@ public class RiotApi implements Cloneable {
 
 	/**
 	 * Returns the tournament code DTO associated with a {@code tournamentCode} string.
-	 * 
+	 *
 	 * @param tournamentCode
 	 *            Tournament code corresponding to data to retrieve.
 	 * @return Data associated with a tournament code
