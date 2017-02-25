@@ -11,9 +11,17 @@ public class SlashCommandRequest {
 	private String response_url;
 	private String  user_name;
 	private String text;
+	/**
+	 * コマンド部分を取得します<BR>
+	 * @return
+	 */
 	public String getCommand() {
 		return command;
 	}
+	/**
+	 * コマンド部分をセットします<BR>
+	 * @param command
+	 */
 	public void setCommand(String command) {
 		this.command = command;
 	}
@@ -65,9 +73,17 @@ public class SlashCommandRequest {
 	public void setUser_name(String user_name) {
 		this.user_name = user_name;
 	}
+	/**
+	 * テキスト部分だけを取得します<BR>
+	 * @return
+	 */
 	public String getText() {
 		return text;
 	}
+	/**
+	 * テキスト部分だけをセットします<BR>
+	 * @param text
+	 */
 	public void setText(String text) {
 		this.text = text;
 	}
