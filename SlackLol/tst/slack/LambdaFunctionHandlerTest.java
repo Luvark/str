@@ -8,19 +8,19 @@ import org.junit.Test;
 import com.amazonaws.services.lambda.runtime.Context;
 
 import my.slack.base.LambdaFunctionHandler;
-import my.slack.base.SlackInputDto;
+import my.slack.base.SlashCommandRequest;
 
 /**
  * A simple test harness for locally invoking your Lambda function handler.
  */
 public class LambdaFunctionHandlerTest {
 
-    private static SlackInputDto input;
+    private static SlashCommandRequest input;
 
     @BeforeClass
     public static void createInput() throws IOException {
         // TODO: set up your sample input object here.
-        input = new SlackInputDto();
+        input = new SlashCommandRequest();
         input.setCommand("/lolsinfo");
         input.setToken("g9dfInOMQ1G4Js6be0vpwuft");
         input.setText("長門有希");

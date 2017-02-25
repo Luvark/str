@@ -1,33 +1,20 @@
 package my.slack.base;
 
-public class SlackInputDto {
-	private String token;
+public class SlashCommandResponse {
+	private String oken;
 	private String team_id;
 	private String  team_domain;
 	private String channel_id;
 	private String  channel_name;
 	private String  timestamp;
-	private String command;
-	private String response_url;
 	private String  user_name;
 	private String text;
-	public String getCommand() {
-		return command;
+	private String trigger_word;
+	public String getOken() {
+		return oken;
 	}
-	public void setCommand(String command) {
-		this.command = command;
-	}
-	public String getResponse_url() {
-		return response_url;
-	}
-	public void setResponse_url(String response_url) {
-		this.response_url = response_url;
-	}
-	public String getToken() {
-		return token;
-	}
-	public void setToken(String token) {
-		this.token = token;
+	public void setOken(String oken) {
+		this.oken = oken;
 	}
 	public String getTeam_id() {
 		return team_id;
@@ -70,5 +57,11 @@ public class SlackInputDto {
 	}
 	public void setText(String text) {
 		this.text = text;
+	}
+	public String getTrigger_word() {
+		return trigger_word;
+	}
+	public void setTrigger_word(String trigger_word) {
+		this.trigger_word = trigger_word;
 	}
 }

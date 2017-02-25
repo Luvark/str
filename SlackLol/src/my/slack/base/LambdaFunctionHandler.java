@@ -17,7 +17,7 @@ import net.rithms.riot.api.endpoints.summoner.dto.Summoner;
 import net.rithms.riot.constant.PlatformId;
 import net.rithms.riot.constant.Region;
 
-public class LambdaFunctionHandler implements RequestHandler<SlackInputDto, Object> {
+public class LambdaFunctionHandler implements RequestHandler<SlashCommandRequest, Object> {
 	// logger
 	LambdaLogger logger;
 	// codec
@@ -26,11 +26,11 @@ public class LambdaFunctionHandler implements RequestHandler<SlackInputDto, Obje
 	private RiotApi api;
 
 	@Override
-	public Object handleRequest(SlackInputDto input, Context context) {
+	public Object handleRequest(SlashCommandRequest input, Context context) {
 		logger = context.getLogger();
 		init();
 		logger.log("Input: " + input);
-		OutputDto dto = new OutputDto();
+		SlashCommandResponse dto = new SlashCommandResponse();
 		// 認証
 		try {
 			final String command = codec.decode(input.getCommand());
