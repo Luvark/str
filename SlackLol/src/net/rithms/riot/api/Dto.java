@@ -21,7 +21,7 @@ import java.lang.reflect.InvocationTargetException;
 
 /**
  * This class is the super class of all Dtos returned by the Riot Api and provides some basic methods.
- * 
+ *
  * @author Daniel 'Linnun' Figge
  */
 abstract public class Dto {
@@ -29,7 +29,7 @@ abstract public class Dto {
 	/**
 	 * Returns a string representation of the {@code Dto}. In general, the toString method returns a string that "textually represents" this
 	 * object.
-	 * 
+	 *
 	 * @param verbose
 	 *            If true, all fields of the {@code Dto} will be returned. Otherwise, only the {@code Dto}'s normal {@code toString()}
 	 *            method will be called.
@@ -44,7 +44,7 @@ abstract public class Dto {
 	 * <p>
 	 * You should not call this method directly. Use {@link #toString(boolean verbose)} instead.
 	 * </p>
-	 * 
+	 *
 	 * @param depth
 	 *            Depth for recursive calls
 	 * @return A string representation of the {@code Dto}.

@@ -1,8 +1,6 @@
 package my.slack.base;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.URL;
+import java.util.logging.Level;
 
 import javax.naming.AuthenticationException;
 
@@ -12,32 +10,41 @@ import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.LambdaLogger;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 
+import net.rithms.riot.api.ApiConfig;
+import net.rithms.riot.api.RiotApi;
+import net.rithms.riot.api.endpoints.current_game.dto.CurrentGameInfo;
+import net.rithms.riot.api.endpoints.summoner.dto.Summoner;
+import net.rithms.riot.constant.PlatformId;
+import net.rithms.riot.constant.Region;
+
 public class LambdaFunctionHandler implements RequestHandler<SlackInputDto, Object> {
 	// logger
 	LambdaLogger logger;
 	// codec
 	final URLCodec codec = new URLCodec("UTF-8");
+	/** RIOT API */
+	private RiotApi api;
 
 	@Override
 	public Object handleRequest(SlackInputDto input, Context context) {
 		logger = context.getLogger();
+		init();
 		logger.log("Input: " + input);
 		OutputDto dto = new OutputDto();
 		// 認証
 		try {
-
 			final String command = codec.decode(input.getCommand());
-			final String inputText = input.getText();
-			String returnText = "";
-			logger.log(command);
-			logger.log(inputText);
+			final String inputText = codec.decode(input.getText());
+			String returnText = "empty";
+			logger.log("Called Command:" + command);
+			logger.log("Called InputText:" + inputText);
 			switch (command) {
 			case "/lolwinrate":
 				break;
 			case "/lolsinfo":
 				if ("g9dfInOMQ1G4Js6be0vpwuft".equals(input.getToken())) {
 					returnText = "【" + getSummonerInfo(inputText) + "】";
-					logger.log(returnText);
+					logger.log("ResultText:" + returnText);
 				} else {
 					throw new AuthenticationException();
 				}
@@ -52,6 +59,11 @@ public class LambdaFunctionHandler implements RequestHandler<SlackInputDto, Obje
 		return dto;
 	}
 
+	/** 初期化します<BR> */
+	private void init() {
+		ApiConfig config = new ApiConfig().setDebugLevel(Level.FINEST).setKey(APIKey.RIOT_API_KEY);
+		api = new RiotApi(config);
+	}
 	/**
 	 * サモナー情報を取得します<BR>
 	 * @param summonerName
@@ -59,25 +71,8 @@ public class LambdaFunctionHandler implements RequestHandler<SlackInputDto, Obje
 	 * @throws Exception
 	 */
 	private String getSummonerInfo(String summonerName) throws Exception {
-		String riotApiUrl = "https://jp.api.pvp.net/api/lol/jp/v1.4/summoner/by-name/";
-		String userName = summonerName;
-		String stringUrl = riotApiUrl + userName + "?api_key=" + APIKey.RIOT_API_KEY;
-
-		logger.log("userName=" + userName);
-		logger.log("stringUrl=" + stringUrl);
-		logger.log("decodedUserName="+codec.decode(userName));
-
-		URL url = new URL(stringUrl);
-		BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
-		logger.log("reader=" + reader);
-
-		StringBuilder sb = new StringBuilder();
-
-		String line;
-		while ((line = reader.readLine()) != null) {
-			sb.append(line);
-		}
-		logger.log("sb=" + sb);
-		return sb.toString();
+		Summoner summonerInfo = api.getSummonerByName(Region.JP, summonerName);
+		CurrentGameInfo gameInfo = api.getCurrentGameInfo(PlatformId.JP, summonerInfo.getId());
+		return gameInfo.toString(true);
 	}
 }

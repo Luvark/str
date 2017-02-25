@@ -20,7 +20,10 @@ public class LambdaFunctionHandlerTest {
     @BeforeClass
     public static void createInput() throws IOException {
         // TODO: set up your sample input object here.
-        input = null;
+        input = new SlackInputDto();
+        input.setCommand("/lolsinfo");
+        input.setToken("g9dfInOMQ1G4Js6be0vpwuft");
+        input.setText("長門有希");
     }
 
     private Context createContext() {
