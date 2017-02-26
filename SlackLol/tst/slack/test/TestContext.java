@@ -1,4 +1,4 @@
-package slack;
+package slack.test;
 
 import com.amazonaws.services.lambda.runtime.ClientContext;
 import com.amazonaws.services.lambda.runtime.CognitoIdentity;

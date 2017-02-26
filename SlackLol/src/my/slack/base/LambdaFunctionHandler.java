@@ -1,5 +1,6 @@
 package my.slack.base;
 
+import java.util.Set;
 import java.util.logging.Level;
 
 import javax.naming.AuthenticationException;
@@ -13,6 +14,8 @@ import com.amazonaws.services.lambda.runtime.RequestHandler;
 import net.rithms.riot.api.ApiConfig;
 import net.rithms.riot.api.RiotApi;
 import net.rithms.riot.api.endpoints.current_game.dto.CurrentGameInfo;
+import net.rithms.riot.api.endpoints.game.dto.Game;
+import net.rithms.riot.api.endpoints.game.dto.RecentGames;
 import net.rithms.riot.api.endpoints.summoner.dto.Summoner;
 import net.rithms.riot.constant.PlatformId;
 import net.rithms.riot.constant.Region;
@@ -71,8 +74,20 @@ public class LambdaFunctionHandler implements RequestHandler<SlashCommandRequest
 	 * @throws Exception
 	 */
 	private String getSummonerInfo(String summonerName) throws Exception {
+		StringBuffer sb = new StringBuffer("");
+		System.out.println("SummonerName=" + summonerName);
 		Summoner summonerInfo = api.getSummonerByName(Region.JP, summonerName);
 		CurrentGameInfo gameInfo = api.getCurrentGameInfo(PlatformId.JP, summonerInfo.getId());
-		return gameInfo.toString(true);
+		RecentGames recentGame = api.getRecentGames(Region.JP, summonerInfo.getId());
+		Set<Game> games = recentGame.getGames();
+		for(Game g : games) {
+			System.out.println(api.getMatch(Region.JP, g.getGameId()).toString(true));
+			sb.append("api.getMatch(Region.JP, g.getGameId()).toString(true)");
+		}
+		System.out.println(gameInfo.toString(true));
+		sb.append(gameInfo.toString(true));
+		System.out.println(recentGame.toString(true));
+		sb.append(recentGame.toString(true));
+		return sb.toString();
 	}
 }
