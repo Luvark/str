@@ -82,7 +82,7 @@ public class LambdaFunctionHandler implements RequestHandler<SlashCommandRequest
 		Set<Game> games = recentGame.getGames();
 		for(Game g : games) {
 			System.out.println(api.getMatch(Region.JP, g.getGameId()).toString(true));
-			sb.append("api.getMatch(Region.JP, g.getGameId()).toString(true)");
+			sb.append(api.getMatch(Region.JP, g.getGameId()).toString(true));
 		}
 		System.out.println(gameInfo.toString(true));
 		sb.append(gameInfo.toString(true));
