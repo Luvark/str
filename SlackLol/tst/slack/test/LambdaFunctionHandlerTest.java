@@ -26,7 +26,6 @@ public class LambdaFunctionHandlerTest {
     	final String token = "g9dfInOMQ1G4Js6be0vpwuft";
     	// codec
     	final URLCodec codec = new URLCodec("UTF-8");
-        // TODO: set up your sample input object here.
         input = new SlashCommandRequest();
         input.setCommand(command);
         input.setToken(token);
@@ -43,7 +42,6 @@ public class LambdaFunctionHandlerTest {
      */
     private Context createContext() {
         TestContext ctx = new TestContext();
-        // TODO: customize your context here if needed.
         ctx.setFunctionName("Slack");
         return ctx;
     }
@@ -54,7 +52,6 @@ public class LambdaFunctionHandlerTest {
         LambdaFunctionHandler handler = new LambdaFunctionHandler();
         Context ctx = createContext();
         Object output = handler.handleRequest(input, ctx);
-        // TODO: validate output here if needed.
         if (output != null) {
             System.out.println(output.toString());
         }
