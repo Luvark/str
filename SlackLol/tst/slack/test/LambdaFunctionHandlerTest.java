@@ -22,7 +22,7 @@ public class LambdaFunctionHandlerTest {
     @BeforeClass
     public static void createInput() throws IOException {
     	final String command = "/lolsinfo";
-    	final String summonerName = "長門有希";
+    	final String summonerName = "Sachichang";
     	final String token = "g9dfInOMQ1G4Js6be0vpwuft";
     	// codec
     	final URLCodec codec = new URLCodec("UTF-8");
